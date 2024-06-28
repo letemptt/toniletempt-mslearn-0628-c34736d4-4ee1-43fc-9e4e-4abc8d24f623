@@ -1,19 +1,105 @@
 {
-  "package": {},
-  "code": {
-    "chat.jinja2": {
-      "name": "chat.jinja2",
-      "type": "prompt",
+  "package": {
+    "promptflow.tools.azure_content_safety.analyze_text": {
+      "name": "Content Safety (Text Analyze)",
+      "type": "python",
       "inputs": {
-        "question": {
+        "connection": {
+          "type": [
+            "AzureContentSafetyConnection"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        },
+        "hate_category": {
+          "type": [
+            "string"
+          ],
+          "default": "medium_sensitivity",
+          "enum": [
+            "disable",
+            "low_sensitivity",
+            "medium_sensitivity",
+            "high_sensitivity"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        },
+        "self_harm_category": {
+          "type": [
+            "string"
+          ],
+          "default": "medium_sensitivity",
+          "enum": [
+            "disable",
+            "low_sensitivity",
+            "medium_sensitivity",
+            "high_sensitivity"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        },
+        "sexual_category": {
+          "type": [
+            "string"
+          ],
+          "default": "medium_sensitivity",
+          "enum": [
+            "disable",
+            "low_sensitivity",
+            "medium_sensitivity",
+            "high_sensitivity"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        },
+        "text": {
           "type": [
             "string"
           ],
           "allow_manual_entry": false,
           "is_multi_select": false,
-          "input_type": "default",
-          "value": "${inputs.question}"
+          "input_type": "default"
         },
+        "violence_category": {
+          "type": [
+            "string"
+          ],
+          "default": "medium_sensitivity",
+          "enum": [
+            "disable",
+            "low_sensitivity",
+            "medium_sensitivity",
+            "high_sensitivity"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default"
+        }
+      },
+      "description": "Use Azure Content Safety to detect harmful content.",
+      "module": "promptflow.tools.azure_content_safety",
+      "function": "analyze_text",
+      "is_builtin": true,
+      "package": "promptflow-tools",
+      "package_version": "1.5.0rc11",
+      "enable_kwargs": false,
+      "deprecated_tools": [
+        "content_safety_text.tools.content_safety_text_tool.analyze_text"
+      ],
+      "tool_state": "stable",
+      "toolId": "promptflow.tools.azure_content_safety.analyze_text"
+    }
+  },
+  "code": {
+    "chat.jinja2": {
+      "name": "chat.jinja2",
+      "type": "prompt",
+      "inputs": {
         "chat_history": {
           "type": [
             "string"
@@ -21,12 +107,24 @@
           "allow_manual_entry": false,
           "is_multi_select": false,
           "input_type": "default",
-          "value": "${inputs.chat_history}"
+          "value": "${inputs.chat_history}",
+          "id": "ntnvq4gi"
+        },
+        "question": {
+          "type": [
+            "string"
+          ],
+          "allow_manual_entry": false,
+          "is_multi_select": false,
+          "input_type": "default",
+          "value": "${inputs.question}",
+          "id": "yi8948qs"
         }
       },
-      "description": "Chat with Chatbot",
-      "is_builtin": false,
       "source": "chat.jinja2",
+      "is_builtin": false,
+      "enable_kwargs": false,
+      "tool_state": "stable",
       "toolId": "chat.jinja2"
     }
   }

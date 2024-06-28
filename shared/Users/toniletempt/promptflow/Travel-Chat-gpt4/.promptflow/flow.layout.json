@@ -2,7 +2,7 @@
   "orientation": "Vertical",
   "nodeLayouts": {
     "inputs": {
-      "x": 187,
+      "x": 12,
       "y": 62,
       "index": -1
     },
@@ -12,15 +12,9 @@
       "index": -1
     },
     "chat": {
-      "x": 187,
+      "x": 12,
       "y": 172,
-      "height": 75,
       "index": 0
-    },
-    "CustomContentFilter416": {
-      "x": 0,
-      "y": 0,
-      "index": 1
     }
   },
   "viewport": {
@@ -29,8 +23,8 @@
       0,
       0,
       1,
-      -61.2734375,
-      110
+      113.71875,
+      122.5
     ]
   }
 }

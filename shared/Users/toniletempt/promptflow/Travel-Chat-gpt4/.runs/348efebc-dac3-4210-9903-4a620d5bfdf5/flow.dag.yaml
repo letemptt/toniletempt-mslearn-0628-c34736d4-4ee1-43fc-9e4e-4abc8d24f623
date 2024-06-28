@@ -20,7 +20,7 @@ nodes:
     type: code
     path: chat.jinja2
   inputs:
-    deployment_name: gpt-35-turbo
+    deployment_name: gpt-4
     temperature: 0.7
     top_p: 0.95
     max_tokens: 800
@@ -34,18 +34,6 @@ nodes:
   connection: ai-toniletemptaimslearn844403042759_aoai
   api: chat
   module: promptflow.tools.aoai
-  use_variants: false
-- name: CustomContentFilter416
-  type: python
-  source:
-    type: package
-    tool: promptflow.tools.azure_content_safety.analyze_text
-  inputs:
-    hate_category: medium_sensitivity
-    self_harm_category: medium_sensitivity
-    sexual_category: medium_sensitivity
-    text: ${chat.output}
-    violence_category: medium_sensitivity
   use_variants: false
 node_variants: {}
 environment:

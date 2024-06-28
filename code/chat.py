@@ -29,12 +29,12 @@ data = {
             }
         }    
     ],
-    "question" : "What can I do in New York City?",
+    "question" : "What can I do in New Orleans?",
 }
 
 body = str.encode(json.dumps(data))
 
-url = 'https://toniletempt-mslearn-0628-ufwyn.eastus.inference.ml.azure.com/score'
+url = 'https://toniletempt-mslearn-0628-imwtp.eastus.inference.ml.azure.com/score'
 # Replace this with the primary/secondary key, AMLToken, or Microsoft Entra ID token for the endpoint
 api_key = os.getenv("API_KEY")
 
@@ -43,7 +43,9 @@ if not api_key:
 
 # The azureml-model-deployment header will force the request to go to a specific deployment.
 # Remove this header to have the request observe the endpoint traffic rules
-headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'toniletempt-mslearn-0628-ufwyn' }
+#GPT 3.5 header 
+#headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'toniletempt-mslearn-0628-ufwyn' }
+headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'toniletempt-mslearn-0628-imwtp' }
 
 req = urllib.request.Request(url, body, headers)
 
